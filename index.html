@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title data-i18n="meta.title">Котировки Мосбиржи, криптовалюты, облигации и валюты онлайн | DeFlow</title>
+  <meta name="description" content="DeFlow — платформа аналитики российских акций и криптовалют. Котировки Мосбиржи, сканеры рынка, облигации и валюты онлайн." data-i18n-content="meta.desc" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav-left" aria-label="Основное меню" data-i18n-aria="nav.main">
+      <a class="nav-link" href="#terminal" data-i18n="nav.terminal">Терминал</a>
+      <a class="nav-link" href="#pricing" data-i18n="nav.pricing">Тарифы</a>
+      <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <a class="logo" href="https://deflow.ru/">DeFlow.</a>
+
+    <div class="nav-right">
+      <div class="lang" data-lang-switch>
+        <button type="button" data-lang="ru" class="is-on">RU</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn-outline" href="https://deflow.ru/login" data-i18n="nav.register">Регистрация — бесплатно</a>
+      <button class="burger" type="button" aria-label="Меню" data-burger data-i18n-aria="nav.menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu hidden>
+    <a href="#terminal" data-i18n="nav.terminal">Терминал</a>
+    <a href="#pricing" data-i18n="nav.pricing">Тарифы</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="https://deflow.ru/blog" data-i18n="nav.blog">Блог</a>
+    <a class="btn-outline" href="https://deflow.ru/login" data-i18n="nav.register">Регистрация — бесплатно</a>
+    <div class="lang" data-lang-switch>
+      <button type="button" data-lang="ru" class="is-on">RU</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <h1 data-assemble data-i18n-html="hero.title">
+      Новая эра<br />
+      <span class="accent">рынка.</span>
+    </h1>
+
+    <div class="hero-stage" aria-hidden="true">
+      <div class="hero-glow"></div>
+      <div class="wordmark">DeFlow</div>
+      <div class="phone">
+        <div class="phone-bezel">
+          <div class="phone-screen">
+            <div class="island"></div>
+            <div class="status"><span>9:41</span><span>▮▮▮</span></div>
+            <svg class="phone-chart" viewBox="0 0 280 360" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#d6f250" stop-opacity="0.45"/>
+                  <stop offset="100%" stop-color="#d6f250" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 250 C40 240 55 160 90 150 C130 138 140 210 175 190 C210 170 230 90 280 70 L280 360 L0 360 Z" fill="url(#area)"/>
+              <path class="chart-line" d="M0 250 C40 240 55 160 90 150 C130 138 140 210 175 190 C210 170 230 90 280 70" fill="none" stroke="#d6f250" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <article class="glass-card card-eth">
+        <div class="card-icon">Ξ</div>
+        <div class="card-meta"><strong>Ethereum</strong><span>ETH</span></div>
+        <svg class="mini-spark" viewBox="0 0 72 28"><path d="M1 22 C12 21 14 16 22 17 C30 18 32 8 42 9 C52 10 58 4 71 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div class="card-quote"><strong>$2,467.59</strong><span class="down">−0.16%</span></div>
+      </article>
+
+      <article class="glass-card card-sber">
+        <div class="card-icon">S</div>
+          <div class="card-meta"><strong data-i18n="card.sber">Сбер Банк</strong><span>SBER</span></div>
+        <svg class="mini-spark" viewBox="0 0 72 28"><path d="M1 8 C14 9 18 16 28 15 C38 14 44 22 54 20 C62 18 66 24 71 23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div class="card-quote"><strong>283,33 ₽</strong><span class="down">−0.64%</span></div>
+      </article>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-left" data-reveal>
+        <p data-i18n="hero.lead">Терминал, сканеры и котировки Мосбиржи, крипты, облигаций и валют — в одном месте. Без регистрации, чтобы смотреть. Со входом — чтобы считать свой портфель.</p>
+        <div class="hero-cta">
+          <a class="btn-dark" href="#terminal">
+            <span>
+              <b data-i18n="hero.cta">Смотреть терминал</b>
+              <small data-i18n="hero.ctaSub">График, уровни и сканеры</small>
+            </span>
+          </a>
+          <a class="btn-lime" href="https://deflow.ru/login" aria-label="Начать" data-i18n-aria="hero.start">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 7.2v9.6M7.2 12h9.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stats" data-reveal>
+        <article>
+          <b class="pixel">8</b>
+          <p data-i18n="hero.stat8">Инструментов на одном графике: акции, фьючерсы, крипта и уровни поверх свечей.</p>
+        </article>
+        <article>
+          <b class="pixel muted">5</b>
+          <p data-i18n="hero.stat5">Сканеров по всей Мосбирже: объёмы, RSI, GAP, MACD и автоуровни.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos" aria-label="Рынки" data-i18n-aria="logos.label">
+    <span><i></i> IMOEX</span>
+    <span><i></i> SBER</span>
+    <span><i></i> BTC</span>
+    <span><i></i> OFZ</span>
+    <span><i></i> USD/RUB</span>
+  </section>
+
+  <section class="banner" id="terminal">
+    <h2 data-assemble data-i18n-html="term.banner">
+      Terminal<br />
+      <span class="accent">сканеры</span><br />
+      уровни
+    </h2>
+  </section>
+
+  <section class="section terminal-hero">
+    <div class="section-copy" data-reveal>
+      <p class="kicker" data-i18n="term.kicker">DeFlow Terminal</p>
+      <h3 data-assemble data-i18n-html="term.title">Одно полотно.<br />Весь рынок.</h3>
+      <p data-i18n="term.lead">До восьми инструментов сразу, позиции юрлиц и физлиц, открытый интерес и уровни поверх свечей. Справа — сканеры: они сами показывают, куда зашёл крупный объём и где перегрет RSI.</p>
+      <a class="btn-start static" href="https://deflow.ru/terminal-preview"><span data-i18n="term.open">Открыть терминал</span> <span>↗</span></a>
+    </div>
+
+    <div class="workspace" data-reveal>
+      <div class="ws-screen">
+        <div class="tv-bar">
+          <i></i><i></i><i></i>
+          <div class="ws-chips">
+            <span class="is-on">SBER</span>
+            <span>GAZP</span>
+            <span>ETHUSDT</span>
+            <span>IMOEX</span>
+          </div>
+          <em data-i18n="term.levels">1H · уровни</em>
+        </div>
+        <div class="ws-body">
+          <div class="ws-chart-wrap">
+            <svg viewBox="0 0 720 320" class="tv-chart" preserveAspectRatio="none">
+              <g class="candles" fill="currentColor">
+                <rect x="28" y="176" width="8" height="48" opacity=".9"/><line x1="32" y1="158" x2="32" y2="236" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="58" y="148" width="8" height="52" opacity=".55"/><line x1="62" y1="132" x2="62" y2="214" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="88" y="162" width="8" height="44" opacity=".9"/><line x1="92" y1="146" x2="92" y2="218" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="118" y="128" width="8" height="58" opacity=".55"/><line x1="122" y1="108" x2="122" y2="198" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="148" y="142" width="8" height="40" opacity=".9"/><line x1="152" y1="126" x2="152" y2="196" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="178" y="110" width="8" height="54" opacity=".55"/><line x1="182" y1="92" x2="182" y2="176" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="208" y="124" width="8" height="38" opacity=".9"/><line x1="212" y1="108" x2="212" y2="174" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="238" y="96" width="8" height="50" opacity=".55"/><line x1="242" y1="78" x2="242" y2="158" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="268" y="108" width="8" height="36" opacity=".9"/><line x1="272" y1="90" x2="272" y2="156" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="298" y="78" width="8" height="52" opacity=".55"/><line x1="302" y1="62" x2="302" y2="142" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="328" y="92" width="8" height="34" opacity=".9"/><line x1="332" y1="74" x2="332" y2="138" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="358" y="70" width="8" height="46" opacity=".55"/><line x1="362" y1="54" x2="362" y2="128" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="388" y="84" width="8" height="32" opacity=".9"/><line x1="392" y1="66" x2="392" y2="126" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="418" y="58" width="8" height="44" opacity=".55"/><line x1="422" y1="42" x2="422" y2="114" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="448" y="72" width="8" height="30" opacity=".9"/><line x1="452" y1="56" x2="452" y2="114" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="478" y="48" width="8" height="42" opacity=".55"/><line x1="482" y1="32" x2="482" y2="102" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="508" y="60" width="8" height="28" opacity=".9"/><line x1="512" y1="44" x2="512" y2="100" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="538" y="38" width="8" height="40" opacity=".55"/><line x1="542" y1="24" x2="542" y2="90" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="568" y="52" width="8" height="26" opacity=".9"/><line x1="572" y1="36" x2="572" y2="90" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="598" y="30" width="8" height="38" opacity=".55"/><line x1="602" y1="16" x2="602" y2="80" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="628" y="42" width="8" height="24" opacity=".9"/><line x1="632" y1="28" x2="632" y2="78" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="658" y="22" width="8" height="36" opacity=".55"/><line x1="662" y1="10" x2="662" y2="70" stroke="currentColor" stroke-width="1.4"/>
+              </g>
+              <line x1="0" y1="118" x2="720" y2="118" stroke="currentColor" stroke-opacity=".28" stroke-dasharray="6 8"/>
+              <line x1="0" y1="186" x2="720" y2="186" stroke="currentColor" stroke-opacity=".16" stroke-dasharray="6 8"/>
+              <g class="volume" fill="currentColor" opacity=".22">
+                <rect x="28" y="286" width="8" height="26"/><rect x="58" y="272" width="8" height="40"/><rect x="88" y="280" width="8" height="32"/>
+                <rect x="118" y="264" width="8" height="48"/><rect x="148" y="278" width="8" height="34"/><rect x="178" y="258" width="8" height="54"/>
+                <rect x="208" y="276" width="8" height="36"/><rect x="238" y="252" width="8" height="60"/><rect x="268" y="274" width="8" height="38"/>
+                <rect x="298" y="248" width="8" height="64"/><rect x="328" y="270" width="8" height="42"/><rect x="358" y="256" width="8" height="56"/>
+                <rect x="388" y="268" width="8" height="44"/><rect x="418" y="246" width="8" height="66"/><rect x="448" y="266" width="8" height="46"/>
+                <rect x="478" y="250" width="8" height="62"/><rect x="508" y="264" width="8" height="48"/><rect x="538" y="242" width="8" height="70"/>
+                <rect x="568" y="260" width="8" height="52"/><rect x="598" y="248" width="8" height="64"/><rect x="628" y="258" width="8" height="54"/>
+                <rect x="658" y="240" width="8" height="72"/>
+              </g>
+            </svg>
+          </div>
+          <aside class="ws-tape" data-tape>
+            <p data-i18n="tape.now">Сканер сейчас</p>
+            <b data-tape-name>MOEX Радар</b>
+            <ul data-tape-list>
+              <li><span>SBER</span><em>объём ×3.1</em></li>
+              <li><span>PLZL</span><em>объём ×2.4</em></li>
+              <li><span>YDEX</span><em>объём ×1.8</em></li>
+              <li><span>LKOH</span><em>RSI 72</em></li>
+              <li><span>T</span><em>GAP +1.4%</em></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="scan-head" data-reveal>
+      <p class="kicker" data-i18n="scan.kicker">Сканеры внутри терминала</p>
+      <h3 data-i18n="scan.title">Пять карт рынка — без отдельной вкладки</h3>
+    </div>
+
+    <div class="scan-grid" data-scans>
+      <a class="scan-card is-on" href="https://deflow.ru/stocks/technical-analysis" data-reveal data-scan="radar">
+        <span class="pixel num">01</span>
+        <div class="scan-visual radar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h4 data-i18n="scan.radar.title">MOEX Радар</h4>
+        <p data-i18n="scan.radar.p">Аномальные объёмы против нормы бумаги. Куда зашли деньги — ещё до движения цены.</p>
+      </a>
+      <a class="scan-card" href="https://deflow.ru/stocks/technical-analysis" data-reveal data-scan="rsi">
+        <span class="pixel num">02</span>
+        <div class="scan-visual heat" aria-hidden="true"></div>
+        <h4 data-i18n="scan.rsi.title">Карта RSI</h4>
+        <p data-i18n="scan.rsi.p">Перекупленность и перепроданность по десяткам бумаг на одном экране.</p>
+      </a>
+      <a class="scan-card" href="https://deflow.ru/stocks/technical-analysis" data-reveal data-scan="levels">
+        <span class="pixel num">03</span>
+        <div class="scan-visual levels" aria-hidden="true"><i></i><i></i><i></i></div>
+        <h4 data-i18n="scan.levels.title">Уровни</h4>
+        <p data-i18n="scan.levels.p">Поддержка и сопротивление находятся автоматически, без ручной разметки.</p>
+      </a>
+      <a class="scan-card" href="https://deflow.ru/stocks/technical-analysis" data-reveal data-scan="gap">
+        <span class="pixel num">04</span>
+        <div class="scan-visual gap" aria-hidden="true"><i></i><i></i></div>
+        <h4 data-i18n="scan.gap.title">Карта GAP</h4>
+        <p data-i18n="scan.gap.p">Все ценовые разрывы вверх и вниз, от 15 минут до недели.</p>
+      </a>
+      <a class="scan-card" href="https://deflow.ru/stocks/technical-analysis" data-reveal data-scan="macd">
+        <span class="pixel num">05</span>
+        <div class="scan-visual macd" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h4 data-i18n="scan.macd.title">Карта MACD</h4>
+        <p data-i18n="scan.macd.p">Пересечения и расхождения скользящих — смена тренда раньше цены.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section after">
+    <div class="section-copy" data-reveal>
+      <p class="kicker" data-i18n="port.kicker">Портфель</p>
+      <h3 data-i18n="port.title">После входа рынок становится вашим</h3>
+      <p data-i18n="port.lead">Брокерский счёт и криптокошельки подтягиваются в один портфель. Токены хранятся зашифрованными и не покидают сервер.</p>
+    </div>
+    <div class="split">
+      <article data-reveal>
+        <span class="pixel num">VaR</span>
+        <h4 data-i18n="port.var.title">Портфель и оценка риска</h4>
+        <p data-i18n="port.var.p">Волатильность, VaR, концентрация и коэффициент Шарпа считаются по вашим реальным позициям.</p>
+      </article>
+      <article data-reveal>
+        <span class="pixel num">AI</span>
+        <h4 data-i18n="port.ai.title">Уведомления и ИИ-чат</h4>
+        <p data-i18n="port.ai.p">Сигналы приходят в Push, MAX и Telegram. ИИ-чат отвечает по вашему портфелю, а не абстрактно.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section calc">
+    <div class="section-copy" data-reveal>
+      <p class="kicker" data-i18n="calc.kicker">Калькулятор</p>
+      <h3 data-i18n="calc.title">Посчитайте, во что превратятся вложения</h3>
+      <p data-i18n="calc.lead">Сложный процент с ежемесячным пополнением. Оценка, а не прогноз: без налогов, комиссий и инфляции.</p>
+    </div>
+    <form class="calc-card" data-calc data-reveal>
+      <label><span data-i18n="calc.principal">Стартовая сумма, ₽</span>
+        <input type="number" name="principal" value="100000" min="0" />
+      </label>
+      <label><span data-i18n="calc.monthly">Ежемесячно, ₽</span>
+        <input type="number" name="monthly" value="15000" min="0" />
+      </label>
+      <label><span data-i18n="calc.rate">Доходность, % годовых</span>
+        <input type="number" name="rate" value="12" min="0" step="0.1" />
+      </label>
+      <label><span data-i18n="calc.years">Срок, лет</span>
+        <input type="number" name="years" value="10" min="1" max="40" />
+      </label>
+      <div class="calc-result">
+        <small data-i18n="calc.result">Через выбранный срок</small>
+        <strong data-calc-out>4 320 000 ₽</strong>
+      </div>
+    </form>
+  </section>
+
+  <section class="banner">
+    <h2 data-assemble data-i18n-html="price.banner">
+      Два тарифа<br />
+      <span class="accent">всё главное</span><br />
+      бесплатно
+    </h2>
+  </section>
+
+  <section class="section pricing" id="pricing">
+    <div class="plans">
+      <article class="plan" data-reveal>
+        <h3>Basic</h3>
+        <p class="price pixel">0 ₽ <span data-i18n="plan.forever">навсегда</span></p>
+        <p class="plan-note" data-i18n="plan.basic.note">Без карты и без пробного периода</p>
+        <a class="btn-outline" href="https://deflow.ru/login" data-i18n="plan.basic.cta">Начать бесплатно</a>
+        <ul>
+          <li data-i18n="plan.b1">Котировки акций, крипты, облигаций и валют</li>
+          <li data-i18n="plan.b2">Сравнение до 8 бумаг на одном графике</li>
+          <li data-i18n="plan.b3">Уровни поддержки и сопротивления</li>
+          <li data-i18n="plan.b4">Прогнозы аналитиков и целевые цены</li>
+          <li class="muted" data-i18n="plan.b5">MOEX Радар и карта RSI в ограниченном объёме</li>
+        </ul>
+      </article>
+      <article class="plan featured" data-reveal>
+        <div class="plan-top">
+          <h3>Premium</h3>
+          <span class="badge" data-i18n="plan.badge">Флагман</span>
+        </div>
+        <p class="price pixel">460 ₽ <span data-i18n="plan.month">в месяц</span></p>
+        <p class="plan-note" data-i18n="plan.prem.note">4 600 ₽ при оплате за год, два месяца в подарок</p>
+        <a class="btn-start static" href="https://deflow.ru/tariffs"><span data-i18n="plan.prem.cta">Открыть Premium</span> <span>↗</span></a>
+        <ul>
+          <li data-i18n="plan.p1">Всё из BASIC без ограничений по объёму</li>
+          <li data-i18n="plan.p2">Сканер дивергенций и карта незакрытых GAP</li>
+          <li data-i18n="plan.p3">Персональные уведомления в Push, MAX и Telegram</li>
+          <li data-i18n="plan.p4">DeFlow Terminal, ИИ-чат, Маркетплейс индикаторов</li>
+          <li data-i18n="plan.p5">Индикатор смарт мани и анализ аномальных объёмов</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section journal" id="blog">
+    <div class="journal-head" data-reveal>
+      <div class="section-copy">
+        <p class="kicker" data-i18n="journal.kicker">Блог</p>
+        <h3 data-i18n="journal.title">Разбираемся в рынке вместе</h3>
+        <p data-i18n="journal.lead">Разборы эмитентов, механика инструментов и объяснения без жаргона.</p>
+      </div>
+      <a class="btn-start static" href="https://deflow.ru/blog"><span data-i18n="journal.all">Все материалы</span> <span>↗</span></a>
+    </div>
+
+    <div class="journal-board">
+      <a class="journal-feature" href="https://deflow.ru/blog/kratkiy-analiz-finansovykh-rezultatov-mkpao-yandeks-za-ii" data-reveal>
+        <div class="journal-visual" aria-hidden="true">
+          <div class="journal-visual-top">
+            <span class="chip" data-i18n="journal.f.chip">всплеск объёма</span>
+            <b class="pixel">YDEX</b>
+          </div>
+          <svg class="journal-chart" viewBox="0 0 640 220" preserveAspectRatio="none">
+            <path d="M0 180 C40 176 70 150 110 142 C160 132 180 90 230 86 C280 82 300 120 350 108 C410 94 430 48 500 42 C560 36 590 58 640 40 V220 H0 Z" fill="currentColor" opacity=".16"/>
+            <path d="M0 180 C40 176 70 150 110 142 C160 132 180 90 230 86 C280 82 300 120 350 108 C410 94 430 48 500 42 C560 36 590 58 640 40" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          </svg>
+          <div class="journal-quote">
+            <strong>4 218 ₽</strong>
+            <span class="up">+2.4%</span>
+          </div>
+        </div>
+        <div class="journal-copy">
+          <time data-i18n="journal.f.time">29 июля 2026</time>
+          <h4 data-i18n="journal.f.title">Краткий анализ финансовых результатов МКПАО «Яндекс» за II квартал 2026 года</h4>
+          <p data-i18n="journal.f.p">Яндекс ускоряет рост, одновременно повышая прибыльность. Результаты II квартала показывают, что компания успешно масштабирует бизнес.</p>
+          <span class="journal-go" data-i18n="journal.f.go">Читать разбор →</span>
+        </div>
+      </a>
+
+      <div class="journal-feed">
+        <a href="https://deflow.ru/blog/teper-kurs-dollara-na-nashey-platforme" data-reveal>
+          <span class="pixel num">02</span>
+          <div>
+            <time data-i18n="journal.1.time">18 июля 2026</time>
+            <h4 data-i18n="journal.1.title">Теперь курс доллара — на нашей платформе</h4>
+            <p data-i18n="journal.1.p">Новый раздел, чтобы следить за долларом без десятка вкладок.</p>
+          </div>
+        </a>
+        <a href="https://deflow.ru/blog/novost-teper-vy-mozhete-videt-kak-sobytiya-vliyayut-na-ak" data-reveal>
+          <span class="pixel num">03</span>
+          <div>
+            <time data-i18n="journal.2.time">4 июля 2026</time>
+            <h4 data-i18n="journal.2.title">События влияют на акции прямо на графике</h4>
+            <p data-i18n="journal.2.p">Интеграция новостей с графиком: нажмите на заголовок и увидите точку на свечах.</p>
+          </div>
+        </a>
+        <a href="https://deflow.ru/blog/smlt-gk-samolet-urovni-na-4-chasovom-grafike" data-reveal>
+          <span class="pixel num">04</span>
+          <div>
+            <time data-i18n="journal.3.time">21 июня 2026</time>
+            <h4 data-i18n="journal.3.title">SMLT (ГК Самолёт) — уровни на 4-часовом графике</h4>
+            <p data-i18n="journal.3.p">Алгоритмы терминала сами находят поддержку и сопротивление.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="section-copy" data-reveal>
+      <p class="kicker" data-i18n="faq.kicker">Вопросы</p>
+      <h3 data-i18n="faq.title">Коротко о главном</h3>
+    </div>
+    <div class="faq-list">
+      <details open data-reveal>
+        <summary data-i18n="faq.1.q">DeFlow это брокер?</summary>
+        <p data-i18n="faq.1.a">Нет. DeFlow не принимает деньги, не открывает счета и не исполняет сделки. Это платформа аналитики российских акций и криптовалют. Сделки вы совершаете у своего брокера.</p>
+      </details>
+      <details data-reveal>
+        <summary data-i18n="faq.2.q">Что доступно без регистрации?</summary>
+        <p data-i18n="faq.2.a">Котировки и карточки всех акций Мосбиржи, топ 100 криптовалют, скринер облигаций, курсы валют, фундаментальный и технический анализ, новости эмитентов и блог. Вход нужен для портфеля, уведомлений и премиальных сканеров.</p>
+      </details>
+      <details data-reveal>
+        <summary data-i18n="faq.3.q">Насколько безопасно подключать брокера и кошельки?</summary>
+        <p data-i18n="faq.3.a">Токены доступа шифруются в базе алгоритмом AES-256-GCM и не покидают сервер. Наружу отдаются только маскированные данные. Вход идёт через VK ID и Яндекс ID, отдельного пароля в DeFlow нет.</p>
+      </details>
+      <details data-reveal>
+        <summary data-i18n="faq.4.q">Сколько стоит и можно ли вернуть деньги?</summary>
+        <p data-i18n-html="faq.4.a">BASIC бесплатен без ограничения по времени. PREMIUM стоит 460 ₽ в месяц или 4 600 ₽ в год. Условия возврата описаны в <a href="https://deflow.ru/refund">политике возврата средств</a>.</p>
+      </details>
+      <details data-reveal>
+        <summary data-i18n="faq.5.q">Подойдёт ли новичку?</summary>
+        <p data-i18n-html="faq.5.a">Да. Каждый сканер открывается с объяснением, как читать сигнал, а в разделе <a href="https://deflow.ru/pioneer">Первооткрыватель</a> собран маршрут от выбора брокера до первой сделки.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2 data-assemble data-i18n-html="cta.title">
+      Рынок открыт.<br />
+      <span class="accent">Вы тоже.</span>
+    </h2>
+    <p data-reveal data-i18n="cta.p">Полный доступ к котировкам и аналитике сразу после входа. Без карты, без брокерского счёта, без пробного периода.</p>
+    <a class="btn-start static" href="https://deflow.ru/login"><span data-i18n="cta.btn">Начать бесплатно</span> <span>↗</span></a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <a class="logo" href="https://deflow.ru/">DeFlow.</a>
+      <p data-i18n="foot.tag">Платформа аналитики российских акций и криптовалют.</p>
+      <p><a href="mailto:deflowru@mail.ru">deflowru@mail.ru</a></p>
+    </div>
+    <div>
+      <h4 data-i18n="foot.markets">Рынки</h4>
+      <ul>
+        <li><a href="https://deflow.ru/stocks" data-i18n="foot.stocks">Акции Мосбиржи</a></li>
+        <li><a href="https://deflow.ru/cryptocurrencies" data-i18n="foot.crypto">Криптовалюты</a></li>
+        <li><a href="https://deflow.ru/bonds" data-i18n="foot.bonds">Облигации</a></li>
+        <li><a href="https://deflow.ru/currency/usd" data-i18n="foot.usd">Курс доллара</a></li>
+        <li><a href="https://deflow.ru/market" data-i18n="foot.summary">Сводка рынка</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="foot.analytics">Аналитика</h4>
+      <ul>
+        <li><a href="https://deflow.ru/stocks/fundamental" data-i18n="foot.fa">Фундаментальный анализ</a></li>
+        <li><a href="https://deflow.ru/stocks/technical-analysis" data-i18n="foot.ta">Технический анализ</a></li>
+        <li><a href="https://deflow.ru/market/screeners" data-i18n="foot.screeners">Скринеры рынка</a></li>
+        <li><a href="https://deflow.ru/stocks/news" data-i18n="foot.news">Новости эмитентов</a></li>
+        <li><a href="https://deflow.ru/market/top100bonds" data-i18n="foot.top100">Топ 100 облигаций</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="foot.product">Продукт</h4>
+      <ul>
+        <li><a href="https://deflow.ru/terminal-preview">DeFlow Terminal</a></li>
+        <li><a href="https://deflow.ru/marketplace-preview" data-i18n="foot.market">Маркетплейс</a></li>
+        <li><a href="https://deflow.ru/ai-invest-chat" data-i18n="foot.ai">ИИ-чат по инвестициям</a></li>
+        <li><a href="https://deflow.ru/tariffs" data-i18n="nav.pricing">Тарифы</a></li>
+        <li><a href="https://deflow.ru/app/club" data-i18n="foot.tools">Инструменты</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="foot.connect">Связь</h4>
+      <ul>
+        <li><a href="https://t.me/deflowmedia">Telegram</a></li>
+        <li><a href="https://vk.com/deflowmedia" data-i18n="foot.vk">ВКонтакте</a></li>
+        <li><a href="https://youtube.com/deflowru">YouTube</a></li>
+        <li><a href="https://deflow.ru/support" data-i18n="foot.support">Поддержка</a></li>
+        <li><a href="https://deflow.ru/blog" data-i18n="nav.blog">Блог</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <div class="legal">
+        <a href="https://deflow.ru/privacy" data-i18n="foot.privacy">Политика конфиденциальности</a>
+        <a href="https://deflow.ru/terms" data-i18n="foot.terms">Условия использования</a>
+        <a href="https://deflow.ru/refund" data-i18n="foot.refund">Политика возврата средств</a>
+        <a href="https://deflow.ru/cookies" data-i18n="foot.cookies">Политика cookie</a>
+      </div>
+      <span>© 2026 DeFlow</span>
+      <p class="disclaimer" data-i18n="foot.disc">Информация на сайте носит справочный характер и не является индивидуальной инвестиционной рекомендацией, офертой или гарантией доходности. DeFlow не является брокером, доверительным управляющим или инвестиционным советником, не принимает денежные средства и не совершает сделки за клиента. Результаты в прошлом не определяют результаты в будущем. Решения о сделках вы принимаете самостоятельно и на свой риск.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
