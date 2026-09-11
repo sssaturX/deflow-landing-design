@@ -351,14 +351,20 @@
 
   const burger = document.querySelector("[data-burger]");
   const mobile = document.querySelector("[data-mobile-menu]");
+  const setMenu = (open) => {
+    if (!burger || !mobile) return;
+    mobile.toggleAttribute("hidden", !open);
+    burger.setAttribute("aria-expanded", String(open));
+    document.documentElement.classList.toggle("is-menu", open);
+  };
   if (burger && mobile) {
-    burger.addEventListener("click", () => {
-      const open = !mobile.hasAttribute("hidden");
-      if (open) mobile.setAttribute("hidden", "");
-      else mobile.removeAttribute("hidden");
-    });
+    burger.setAttribute("aria-expanded", "false");
+    burger.addEventListener("click", () => setMenu(mobile.hasAttribute("hidden")));
     mobile.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => mobile.setAttribute("hidden", ""));
+      link.addEventListener("click", () => setMenu(false));
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setMenu(false);
     });
   }
 
