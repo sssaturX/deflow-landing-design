@@ -132,6 +132,29 @@
       "foot.refund": "Политика возврата средств",
       "foot.cookies": "Политика cookie",
       "foot.disc": "Информация на сайте носит справочный характер и не является индивидуальной инвестиционной рекомендацией, офертой или гарантией доходности. DeFlow не является брокером, доверительным управляющим или инвестиционным советником, не принимает денежные средства и не совершает сделки за клиента. Результаты в прошлом не определяют результаты в будущем. Решения о сделках вы принимаете самостоятельно и на свой риск.",
+      "login.meta": "Регистрация в DeFlow — бесплатно, VK ID и Яндекс ID",
+      "login.title": "Регистрация<br /><span class=\"accent\">бесплатно.</span>",
+      "login.lead": "Портфель, уведомления и сканеры — после одного входа. BASIC бесплатно, карта не нужна.",
+      "login.home": "На главную",
+      "login.kicker": "Бесплатно",
+      "login.pick": "Регистрация и вход — одно действие. Выберите сервис.",
+      "login.consent": "Я ознакомлен(а) и согласен(на) с",
+      "login.and": "и",
+      "login.privacy": "Политикой конфиденциальности",
+      "login.refund": "Политикой возврата средств",
+      "login.cookies": "Политикой cookie",
+      "login.terms": "Условиями использования",
+      "login.gate": "Отметьте согласие с политиками, чтобы создать аккаунт",
+      "login.yandex": "Яндекс ID",
+      "login.yandexSub": "Создать аккаунт через Яндекс",
+      "login.vk": "VK ID",
+      "login.vkSub": "Создать аккаунт через ВКонтакте",
+      "login.or": "уже есть логин",
+      "login.form": "Создать аккаунт",
+      "login.user": "Логин",
+      "login.pass": "Пароль",
+      "login.submit": "Продолжить",
+      "login.note": "Если аккаунт уже есть, тот же вход его откроет. Отдельный пароль в DeFlow не обязателен.",
     },
     en: {
       "meta.title": "MOEX quotes, crypto, bonds and FX online | DeFlow",
@@ -265,6 +288,29 @@
       "foot.refund": "Refund policy",
       "foot.cookies": "Cookie policy",
       "foot.disc": "Information on this site is for reference only and is not personal investment advice, an offer or a guarantee of return. DeFlow is not a broker, asset manager or investment adviser, does not accept funds and does not trade for clients. Past results do not determine future results. You make trading decisions on your own and at your own risk.",
+      "login.meta": "Create a free DeFlow account — VK ID and Yandex ID",
+      "login.title": "Sign up<br /><span class=\"accent\">for free.</span>",
+      "login.lead": "Portfolio, alerts and scanners after one sign-in. BASIC is free, no card.",
+      "login.home": "Home",
+      "login.kicker": "Free",
+      "login.pick": "Sign-up and sign-in are the same step. Choose a service.",
+      "login.consent": "I have read and agree to the",
+      "login.and": "and",
+      "login.privacy": "Privacy policy",
+      "login.refund": "Refund policy",
+      "login.cookies": "Cookie policy",
+      "login.terms": "Terms of use",
+      "login.gate": "Accept the policies to create an account",
+      "login.yandex": "Yandex ID",
+      "login.yandexSub": "Create an account with Yandex",
+      "login.vk": "VK ID",
+      "login.vkSub": "Create an account with VK",
+      "login.or": "already have a login",
+      "login.form": "Create account",
+      "login.user": "Login",
+      "login.pass": "Password",
+      "login.submit": "Continue",
+      "login.note": "If you already have an account, the same sign-in opens it. A separate DeFlow password is optional.",
     },
   };
 
@@ -321,6 +367,10 @@
     document.querySelectorAll("[data-i18n-content]").forEach((el) => {
       const value = dict[el.dataset.i18nContent];
       if (value != null) el.setAttribute("content", value);
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+      const value = dict[el.dataset.i18nPh];
+      if (value != null) el.setAttribute("placeholder", value);
     });
 
     document.querySelectorAll("[data-lang-switch] [data-lang]").forEach((btn) => {
@@ -410,6 +460,34 @@
 
   if (form) form.addEventListener("input", calc);
 
+  const consent = document.querySelector("[data-login-consent]");
+  const setConsent = () => {
+    const on = Boolean(consent?.checked);
+    document.documentElement.classList.toggle("is-consent", on);
+    document.querySelectorAll("[data-login-need]").forEach((el) => {
+      if (el.tagName === "A") {
+        el.setAttribute("aria-disabled", String(!on));
+        el.tabIndex = on ? 0 : -1;
+      } else {
+        el.disabled = !on;
+      }
+    });
+  };
+  if (consent) {
+    setConsent();
+    consent.addEventListener("change", setConsent);
+    document.querySelectorAll("a[data-login-need]").forEach((el) => {
+      el.addEventListener("click", (event) => {
+        if (!consent.checked) event.preventDefault();
+      });
+    });
+  }
+  document.querySelector("[data-login-form]")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!consent?.checked) return;
+    window.location.href = "https://deflow.ru/login";
+  });
+
   const faqs = document.querySelectorAll(".faq-list details");
   faqs.forEach((item) => {
     const summary = item.querySelector("summary");
@@ -426,15 +504,92 @@
   applyLang(lang, { motion: false });
 
   const show = (el) => el.classList.add("is-in");
+  const fileName = (path) => {
+    const file = (path || "").split("/").pop();
+    if (!file || !file.includes(".")) return "index.html";
+    return file;
+  };
+  const clearVeil = () => {
+    document.documentElement.classList.remove("is-arrive", "is-ready", "is-revealed", "is-leaving");
+    document.documentElement.style.removeProperty("--veil-x");
+    document.documentElement.style.removeProperty("--veil-y");
+    try { sessionStorage.removeItem("df-veil"); } catch (e) {}
+  };
+  const playArrive = () => {
+    if (!document.documentElement.classList.contains("is-arrive")) return;
+    try { sessionStorage.removeItem("df-veil"); } catch (e) {}
+    const blob = document.querySelector(".page-veil-blob");
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      clearVeil();
+    };
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add("is-arrive", "is-ready");
+      requestAnimationFrame(() => document.documentElement.classList.add("is-revealed"));
+    });
+    blob?.addEventListener("transitionend", (event) => {
+      if (event.target === blob && event.propertyName === "transform") finish();
+    });
+    setTimeout(finish, 1100);
+  };
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) clearVeil();
+  });
 
   if (reduced) {
+    clearVeil();
     document.querySelectorAll("[data-reveal], [data-assemble]").forEach(show);
     return;
   }
 
-  document.querySelectorAll(".hero [data-assemble], .hero [data-reveal]").forEach((el) => {
-    requestAnimationFrame(() => requestAnimationFrame(() => show(el)));
-  });
+  playArrive();
+
+  const arriving = document.documentElement.classList.contains("is-arrive");
+  const showHero = () => {
+    document.querySelectorAll(".hero [data-assemble], .hero [data-reveal], .login-board [data-assemble]").forEach(show);
+  };
+  if (arriving) setTimeout(showHero, 220);
+  else requestAnimationFrame(() => requestAnimationFrame(showHero));
+
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target.closest("a[href]");
+    if (!anchor || (anchor.target && anchor.target !== "_self")) return;
+    const next = new URL(anchor.href, location.href);
+    if (next.origin !== location.origin) return;
+    const from = fileName(location.pathname);
+    const to = fileName(next.pathname);
+    if (from === to) return;
+    if (to !== "login.html" && to !== "index.html") return;
+    event.preventDefault();
+    if (document.documentElement.classList.contains("is-leaving")) return;
+    const x = event.clientX;
+    const y = event.clientY;
+    const veil = document.querySelector(".page-veil");
+    const blob = document.querySelector(".page-veil-blob");
+    document.documentElement.style.setProperty("--veil-x", `${x}px`);
+    document.documentElement.style.setProperty("--veil-y", `${y}px`);
+    if (veil) {
+      veil.style.setProperty("--veil-x", `${x}px`);
+      veil.style.setProperty("--veil-y", `${y}px`);
+      void blob?.offsetWidth;
+    }
+    try { sessionStorage.setItem("df-veil", "1"); } catch (e) {}
+    document.documentElement.classList.add("is-leaving");
+    let went = false;
+    const go = () => {
+      if (went) return;
+      went = true;
+      location.href = next.href;
+    };
+    blob?.addEventListener("transitionend", (end) => {
+      if (end.target === blob && end.propertyName === "transform") go();
+    });
+    setTimeout(go, 720);
+  }, true);
 
   const io = new IntersectionObserver(
     (entries) => {
@@ -448,7 +603,7 @@
   );
 
   document.querySelectorAll("[data-reveal], [data-assemble]").forEach((el) => {
-    if (el.closest(".hero")) return;
+    if (el.closest(".hero, .login-board")) return;
     io.observe(el);
   });
 })();

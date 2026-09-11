@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>try { if (sessionStorage.getItem("df-veil") === "1") document.documentElement.classList.add("is-arrive"); } catch (e) {}</script>
+  <style>html.is-arrive,html.is-leaving{background:#d6f250}html.is-arrive body{background:#d6f250}</style>
+  <title data-i18n="login.meta">Регистрация в DeFlow — бесплатно, VK ID и Яндекс ID</title>
+  <meta name="description" content="DeFlow — платформа аналитики российских акций и криптовалют. Вход через VK ID и Яндекс ID." data-i18n-content="meta.desc" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-login">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="page-veil" aria-hidden="true"><i class="page-veil-blob"></i><span>DeFlow.</span></div>
+
+  <header class="site-header">
+    <nav class="nav-left" aria-label="Основное меню" data-i18n-aria="nav.main">
+      <a class="nav-link" href="index.html#terminal" data-i18n="nav.terminal">Терминал</a>
+      <a class="nav-link" href="index.html#pricing" data-i18n="nav.pricing">Тарифы</a>
+      <a class="nav-link" href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <a class="logo" href="index.html">DeFlow.</a>
+
+    <div class="nav-right">
+      <div class="lang" data-lang-switch>
+        <button type="button" data-lang="ru" class="is-on">RU</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn-outline" href="index.html" data-i18n="login.home">На главную</a>
+      <button class="burger" type="button" aria-label="Меню" data-burger data-i18n-aria="nav.menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu hidden>
+    <a href="index.html#terminal" data-i18n="nav.terminal">Терминал</a>
+    <a href="index.html#pricing" data-i18n="nav.pricing">Тарифы</a>
+    <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="https://deflow.ru/blog" data-i18n="nav.blog">Блог</a>
+    <a class="btn-outline" href="index.html" data-i18n="login.home">На главную</a>
+    <div class="lang" data-lang-switch>
+      <button type="button" data-lang="ru" class="is-on">RU</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <section class="login-board">
+    <div class="login-glow" aria-hidden="true"></div>
+    <p class="login-word" aria-hidden="true">DeFlow</p>
+    <div class="login-stage">
+      <div class="login-copy">
+        <p class="login-mark">DeFlow.</p>
+        <h1 data-assemble data-i18n-html="login.title">
+          Регистрация<br />
+          <span class="accent">бесплатно.</span>
+        </h1>
+        <p class="login-lead" data-i18n="login.lead">Портфель, уведомления и сканеры — после одного входа. BASIC бесплатно, карта не нужна.</p>
+      </div>
+
+      <div class="login-card">
+        <p class="kicker" data-i18n="login.kicker">Бесплатно</p>
+        <h2 data-i18n="login.form">Создать аккаунт</h2>
+        <p class="pick" data-i18n="login.pick">Регистрация и вход — одно действие. Выберите сервис.</p>
+
+        <label class="login-consent">
+          <input type="checkbox" data-login-consent />
+          <span>
+            <span data-i18n="login.consent">Я ознакомлен(а) и согласен(на) с</span>
+            <a href="https://deflow.ru/privacy" target="_blank" rel="noopener noreferrer" data-i18n="login.privacy">Политикой конфиденциальности</a>,
+            <a href="https://deflow.ru/refund" target="_blank" rel="noopener noreferrer" data-i18n="login.refund">Политикой возврата средств</a>,
+            <a href="https://deflow.ru/cookies" target="_blank" rel="noopener noreferrer" data-i18n="login.cookies">Политикой cookie</a>
+            <span data-i18n="login.and">и</span>
+            <a href="https://deflow.ru/terms" target="_blank" rel="noopener noreferrer" data-i18n="login.terms">Условиями использования</a>
+          </span>
+        </label>
+
+        <div class="login-actions">
+          <a class="btn-dark login-id is-main" data-login-need href="https://deflow.ru/login" aria-disabled="true" tabindex="-1">
+            <span class="card-icon" aria-hidden="true">Я</span>
+            <span>
+              <b data-i18n="login.yandex">Яндекс ID</b>
+              <small data-i18n="login.yandexSub">Создать аккаунт через Яндекс</small>
+            </span>
+          </a>
+          <a class="btn-dark login-id" data-login-need href="https://deflow.ru/login" aria-disabled="true" tabindex="-1">
+            <span class="card-icon" aria-hidden="true">VK</span>
+            <span>
+              <b data-i18n="login.vk">VK ID</b>
+              <small data-i18n="login.vkSub">Создать аккаунт через ВКонтакте</small>
+            </span>
+          </a>
+          <p class="login-or" data-i18n="login.or">уже есть логин</p>
+          <form class="login-form" data-login-form>
+            <input type="text" name="login" autocomplete="username" data-i18n-ph="login.user" data-i18n-aria="login.user" placeholder="Логин" />
+            <input type="password" name="password" autocomplete="current-password" data-i18n-ph="login.pass" data-i18n-aria="login.pass" placeholder="Пароль" />
+            <button class="btn-lime-wide" type="submit" data-login-need disabled data-i18n="login.submit">Продолжить</button>
+          </form>
+        </div>
+        <p class="login-note" data-i18n="login.note">Если аккаунт уже есть, тот же вход его откроет. Отдельный пароль в DeFlow не обязателен.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos" aria-label="Рынки" data-i18n-aria="logos.label">
+    <span><i></i> IMOEX</span>
+    <span><i></i> SBER</span>
+    <span><i></i> BTC</span>
+    <span><i></i> OFZ</span>
+    <span><i></i> USD/RUB</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="logo" href="https://deflow.ru/">DeFlow.</a>
+          <p data-i18n="foot.tag">Платформа аналитики российских акций и криптовалют.</p>
+          <a class="footer-mail" href="mailto:deflowru@mail.ru">deflowru@mail.ru</a>
+          <nav class="footer-social" aria-label="Social">
+            <a href="https://t.me/deflowmedia">Telegram</a>
+            <a href="https://vk.com/deflowmedia" data-i18n="foot.vk">ВКонтакте</a>
+            <a href="https://youtube.com/deflowru">YouTube</a>
+          </nav>
+        </div>
+        <nav class="footer-cols" aria-label="DeFlow">
+          <div>
+            <h4 data-i18n="foot.markets">Рынки</h4>
+            <ul>
+              <li><a href="https://deflow.ru/stocks" data-i18n="foot.stocks">Акции Мосбиржи</a></li>
+              <li><a href="https://deflow.ru/cryptocurrencies" data-i18n="foot.crypto">Криптовалюты</a></li>
+              <li><a href="https://deflow.ru/bonds" data-i18n="foot.bonds">Облигации</a></li>
+              <li><a href="https://deflow.ru/currency/usd" data-i18n="foot.usd">Курс доллара</a></li>
+              <li><a href="https://deflow.ru/market" data-i18n="foot.summary">Сводка рынка</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="foot.analytics">Аналитика</h4>
+            <ul>
+              <li><a href="https://deflow.ru/stocks/fundamental" data-i18n="foot.fa">Фундаментальный анализ</a></li>
+              <li><a href="https://deflow.ru/stocks/technical-analysis" data-i18n="foot.ta">Технический анализ</a></li>
+              <li><a href="https://deflow.ru/market/screeners" data-i18n="foot.screeners">Скринеры рынка</a></li>
+              <li><a href="https://deflow.ru/stocks/news" data-i18n="foot.news">Новости эмитентов</a></li>
+              <li><a href="https://deflow.ru/market/top100bonds" data-i18n="foot.top100">Топ 100 облигаций</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="foot.product">Продукт</h4>
+            <ul>
+              <li><a href="https://deflow.ru/terminal-preview">DeFlow Terminal</a></li>
+              <li><a href="https://deflow.ru/marketplace-preview" data-i18n="foot.market">Маркетплейс</a></li>
+              <li><a href="https://deflow.ru/ai-invest-chat" data-i18n="foot.ai">ИИ-чат по инвестициям</a></li>
+              <li><a href="https://deflow.ru/tariffs" data-i18n="nav.pricing">Тарифы</a></li>
+              <li><a href="https://deflow.ru/app/club" data-i18n="foot.tools">Инструменты</a></li>
+              <li><a href="https://deflow.ru/support" data-i18n="foot.support">Поддержка</a></li>
+              <li><a href="https://deflow.ru/blog" data-i18n="nav.blog">Блог</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true">DeFlow</div>
+      <div class="footer-bottom">
+        <span>© 2026 DeFlow</span>
+        <div class="legal">
+          <a href="https://deflow.ru/privacy" data-i18n="foot.privacy">Политика конфиденциальности</a>
+          <a href="https://deflow.ru/terms" data-i18n="foot.terms">Условия использования</a>
+          <a href="https://deflow.ru/refund" data-i18n="foot.refund">Политика возврата средств</a>
+          <a href="https://deflow.ru/cookies" data-i18n="foot.cookies">Политика cookie</a>
+        </div>
+      </div>
+      <p class="disclaimer" data-i18n="foot.disc">Информация на сайте носит справочный характер и не является индивидуальной инвестиционной рекомендацией, офертой или гарантией доходности. DeFlow не является брокером, доверительным управляющим или инвестиционным советником, не принимает денежные средства и не совершает сделки за клиента. Результаты в прошлом не определяют результаты в будущем. Решения о сделках вы принимаете самостоятельно и на свой риск.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
