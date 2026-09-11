@@ -1186,9 +1186,29 @@ html.is-menu .burger span:last-child { transform: translateY(-3.25px) rotate(-45
   }
   .hero-glow { width: min(100%, 360px); height: 220px; top: -10%; }
   .banner { padding-top: 56px; }
-  .banner h2 { font-size: clamp(40px, 10vw, 88px); }
+  .banner h2 {
+    font-size: clamp(28px, 7.2vw, 64px);
+    letter-spacing: -0.05em;
+    line-height: 1.02;
+    overflow: hidden;
+  }
   .cta { padding: 64px 16px 72px; }
-  .cta h2 { font-size: clamp(36px, 9vw, 80px); }
+  .cta h2 {
+    font-size: clamp(24px, 6.4vw, 56px);
+    letter-spacing: -0.05em;
+    line-height: 1.06;
+    overflow: hidden;
+  }
+  .journal-visual {
+    min-height: 200px;
+    isolation: isolate;
+    contain: paint;
+  }
+  .journal-quote {
+    left: 16px;
+    bottom: 14px;
+    max-width: calc(100% - 32px);
+  }
   .cta p { margin-left: 0; margin-right: 0; }
   .section { padding-top: 36px; padding-bottom: 20px; }
   .section-copy h3 { font-size: clamp(26px, 6vw, 40px); }
@@ -1196,7 +1216,6 @@ html.is-menu .burger span:last-child { transform: translateY(-3.25px) rotate(-45
   .journal-feature { min-height: 0; }
   .journal-board { min-height: 0; }
   .journal-feed { grid-template-rows: none; }
-  .journal-visual { min-height: 200px; }
   .faq-intro { position: static; }
   .faq-intro p:not(.kicker) { max-width: none; }
   .faq-list {
@@ -1213,6 +1232,15 @@ html.is-menu .burger span:last-child { transform: translateY(-3.25px) rotate(-45
   .ws-body { min-height: 0; }
   .plan .btn-outline,
   .plan .btn-start { width: 100%; justify-content: center; }
+  .footer-wordmark {
+    width: calc(100% + 32px);
+    margin: 40px -16px 8px;
+    padding: 0 8px;
+    font-size: clamp(64px, 18vw, 140px);
+    letter-spacing: -0.07em;
+    line-height: 1;
+    overflow: visible;
+  }
   #terminal, #pricing, #faq, #blog, .banner, .section, .hero {
     scroll-margin-top: 68px;
   }
@@ -1251,13 +1279,15 @@ html.is-menu .burger span:last-child { transform: translateY(-3.25px) rotate(-45
   .logos::-webkit-scrollbar { display: none; }
   .logos span { flex: 0 0 auto; }
   .logos span + span::before { margin-right: 14px; height: 14px; }
-  .banner h2 { font-size: clamp(30px, 11vw, 48px); }
+  .banner h2 { font-size: clamp(24px, 7.6vw, 32px); }
   .banner h2 .line,
   .banner h2 .line > span,
   .cta h2 .line,
   .cta h2 .line > span { white-space: nowrap; }
-  .cta { padding: 52px 18px 60px; }
-  .cta h2 { font-size: clamp(26px, 8.6vw, 40px); }
+  .banner h2 .line,
+  .cta h2 .line { padding: 0.04em 0 0.08em; }
+  .cta { padding: 52px 16px 60px; }
+  .cta h2 { font-size: clamp(22px, 6.8vw, 28px); }
   .cta p { font-size: 14.5px; }
   .btn-start.static { width: 100%; justify-content: center; }
   .scan-card { min-height: 188px; padding: 16px 14px 14px; }
@@ -1270,6 +1300,21 @@ html.is-menu .burger span:last-child { transform: translateY(-3.25px) rotate(-45
   .calc-result strong { font-size: 28px; }
   .price { font-size: 32px; }
   .plan { padding: 22px; }
+  .journal-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 188px;
+    padding: 16px;
+  }
+  .journal-quote {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 28px;
+    max-width: 100%;
+  }
+  .journal-quote strong { font-size: 22px; }
   .journal-copy { padding: 20px 18px 22px; }
   .journal-copy h4 { font-size: 22px; }
   .journal-feed a { padding: 16px 16px; gap: 12px; }
@@ -1285,10 +1330,18 @@ html.is-menu .burger span:last-child { transform: translateY(-3.25px) rotate(-45
   }
   .faq-list summary i { width: 28px; height: 28px; }
   .faq-list p { padding: 0 14px 16px 52px; }
-  .footer-inner { padding: 48px 18px max(28px, env(safe-area-inset-bottom)); }
+  .footer-inner { padding: 48px 16px max(28px, env(safe-area-inset-bottom)); }
   .footer-brand .logo { font-size: 28px; }
   .footer-cols { gap: 24px 16px; }
-  .footer-wordmark { margin: 28px -8px 0; font-size: clamp(64px, 24vw, 110px); }
+  .footer-wordmark {
+    width: calc(100% + 32px);
+    margin: 28px -16px 6px;
+    padding: 0.12em 4px 0.18em;
+    font-size: 18vw;
+    letter-spacing: -0.07em;
+    line-height: 1;
+    overflow: visible;
+  }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
   .mobile-menu { font-size: 24px; gap: 16px; padding-left: 18px; padding-right: 18px; }
 }
