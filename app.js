@@ -90,7 +90,10 @@
       "journal.3.title": "SMLT (ГК Самолёт) — уровни на 4-часовом графике",
       "journal.3.p": "Алгоритмы терминала сами находят поддержку и сопротивление.",
       "faq.kicker": "Вопросы",
-      "faq.title": "Коротко о главном",
+      "faq.title": "Коротко о<br /><span class=\"accent\">главном</span>",
+      "faq.lead": "Пять ответов без брошюры: кто мы, что бесплатно и как устроен вход.",
+      "faq.pill1": "Не брокер",
+      "faq.pill2": "BASIC 0 ₽",
       "faq.1.q": "DeFlow это брокер?",
       "faq.1.a": "Нет. DeFlow не принимает деньги, не открывает счета и не исполняет сделки. Это платформа аналитики российских акций и криптовалют. Сделки вы совершаете у своего брокера.",
       "faq.2.q": "Что доступно без регистрации?",
@@ -220,7 +223,10 @@
       "journal.3.title": "SMLT (Samolet) — levels on the 4-hour chart",
       "journal.3.p": "Terminal algorithms find support and resistance on their own.",
       "faq.kicker": "FAQ",
-      "faq.title": "The short version",
+      "faq.title": "The short<br /><span class=\"accent\">version</span>",
+      "faq.lead": "Five answers, no brochure: who we are, what’s free, and how sign-in works.",
+      "faq.pill1": "Not a broker",
+      "faq.pill2": "BASIC 0 ₽",
       "faq.1.q": "Is DeFlow a broker?",
       "faq.1.a": "No. DeFlow does not take money, open accounts or execute trades. It is an analytics platform for Russian equities and crypto. You trade with your own broker.",
       "faq.2.q": "What works without an account?",
@@ -397,6 +403,19 @@
   };
 
   if (form) form.addEventListener("input", calc);
+
+  const faqs = document.querySelectorAll(".faq-list details");
+  faqs.forEach((item) => {
+    const summary = item.querySelector("summary");
+    if (!summary) return;
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+      const willOpen = !item.open;
+      faqs.forEach((other) => {
+        other.open = other === item && willOpen;
+      });
+    });
+  });
 
   applyLang(lang, { motion: false });
 

@@ -404,31 +404,59 @@
   </section>
 
   <section class="section faq" id="faq">
-    <div class="section-copy" data-reveal>
-      <p class="kicker" data-i18n="faq.kicker">Вопросы</p>
-      <h3 data-i18n="faq.title">Коротко о главном</h3>
-    </div>
-    <div class="faq-list">
-      <details open data-reveal>
-        <summary data-i18n="faq.1.q">DeFlow это брокер?</summary>
-        <p data-i18n="faq.1.a">Нет. DeFlow не принимает деньги, не открывает счета и не исполняет сделки. Это платформа аналитики российских акций и криптовалют. Сделки вы совершаете у своего брокера.</p>
-      </details>
-      <details data-reveal>
-        <summary data-i18n="faq.2.q">Что доступно без регистрации?</summary>
-        <p data-i18n="faq.2.a">Котировки и карточки всех акций Мосбиржи, топ 100 криптовалют, скринер облигаций, курсы валют, фундаментальный и технический анализ, новости эмитентов и блог. Вход нужен для портфеля, уведомлений и премиальных сканеров.</p>
-      </details>
-      <details data-reveal>
-        <summary data-i18n="faq.3.q">Насколько безопасно подключать брокера и кошельки?</summary>
-        <p data-i18n="faq.3.a">Токены доступа шифруются в базе алгоритмом AES-256-GCM и не покидают сервер. Наружу отдаются только маскированные данные. Вход идёт через VK ID и Яндекс ID, отдельного пароля в DeFlow нет.</p>
-      </details>
-      <details data-reveal>
-        <summary data-i18n="faq.4.q">Сколько стоит и можно ли вернуть деньги?</summary>
-        <p data-i18n-html="faq.4.a">BASIC бесплатен без ограничения по времени. PREMIUM стоит 460 ₽ в месяц или 4 600 ₽ в год. Условия возврата описаны в <a href="https://deflow.ru/refund">политике возврата средств</a>.</p>
-      </details>
-      <details data-reveal>
-        <summary data-i18n="faq.5.q">Подойдёт ли новичку?</summary>
-        <p data-i18n-html="faq.5.a">Да. Каждый сканер открывается с объяснением, как читать сигнал, а в разделе <a href="https://deflow.ru/pioneer">Первооткрыватель</a> собран маршрут от выбора брокера до первой сделки.</p>
-      </details>
+    <div class="faq-board">
+      <div class="faq-intro" data-reveal>
+        <p class="kicker" data-i18n="faq.kicker">Вопросы</p>
+        <h3 data-assemble data-i18n-html="faq.title">Коротко о<br /><span class="accent">главном</span></h3>
+        <p data-i18n="faq.lead">Пять ответов без брошюры: кто мы, что бесплатно и как устроен вход.</p>
+        <div class="faq-pills">
+          <span data-i18n="faq.pill1">Не брокер</span>
+          <span data-i18n="faq.pill2">BASIC 0 ₽</span>
+          <span>AES-256</span>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details open data-reveal>
+          <summary>
+            <span class="pixel num">01</span>
+            <span data-i18n="faq.1.q">DeFlow это брокер?</span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <p data-i18n="faq.1.a">Нет. DeFlow не принимает деньги, не открывает счета и не исполняет сделки. Это платформа аналитики российских акций и криптовалют. Сделки вы совершаете у своего брокера.</p>
+        </details>
+        <details data-reveal>
+          <summary>
+            <span class="pixel num">02</span>
+            <span data-i18n="faq.2.q">Что доступно без регистрации?</span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <p data-i18n="faq.2.a">Котировки и карточки всех акций Мосбиржи, топ 100 криптовалют, скринер облигаций, курсы валют, фундаментальный и технический анализ, новости эмитентов и блог. Вход нужен для портфеля, уведомлений и премиальных сканеров.</p>
+        </details>
+        <details data-reveal>
+          <summary>
+            <span class="pixel num">03</span>
+            <span data-i18n="faq.3.q">Насколько безопасно подключать брокера и кошельки?</span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <p data-i18n="faq.3.a">Токены доступа шифруются в базе алгоритмом AES-256-GCM и не покидают сервер. Наружу отдаются только маскированные данные. Вход идёт через VK ID и Яндекс ID, отдельного пароля в DeFlow нет.</p>
+        </details>
+        <details data-reveal>
+          <summary>
+            <span class="pixel num">04</span>
+            <span data-i18n="faq.4.q">Сколько стоит и можно ли вернуть деньги?</span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <p data-i18n-html="faq.4.a">BASIC бесплатен без ограничения по времени. PREMIUM стоит 460 ₽ в месяц или 4 600 ₽ в год. Условия возврата описаны в <a href="https://deflow.ru/refund">политике возврата средств</a>.</p>
+        </details>
+        <details data-reveal>
+          <summary>
+            <span class="pixel num">05</span>
+            <span data-i18n="faq.5.q">Подойдёт ли новичку?</span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <p data-i18n-html="faq.5.a">Да. Каждый сканер открывается с объяснением, как читать сигнал, а в разделе <a href="https://deflow.ru/pioneer">Первооткрыватель</a> собран маршрут от выбора брокера до первой сделки.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -442,59 +470,63 @@
   </section>
 
   <footer class="footer">
-    <div class="footer-brand">
-      <a class="logo" href="https://deflow.ru/">DeFlow.</a>
-      <p data-i18n="foot.tag">Платформа аналитики российских акций и криптовалют.</p>
-      <p><a href="mailto:deflowru@mail.ru">deflowru@mail.ru</a></p>
-    </div>
-    <div>
-      <h4 data-i18n="foot.markets">Рынки</h4>
-      <ul>
-        <li><a href="https://deflow.ru/stocks" data-i18n="foot.stocks">Акции Мосбиржи</a></li>
-        <li><a href="https://deflow.ru/cryptocurrencies" data-i18n="foot.crypto">Криптовалюты</a></li>
-        <li><a href="https://deflow.ru/bonds" data-i18n="foot.bonds">Облигации</a></li>
-        <li><a href="https://deflow.ru/currency/usd" data-i18n="foot.usd">Курс доллара</a></li>
-        <li><a href="https://deflow.ru/market" data-i18n="foot.summary">Сводка рынка</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="foot.analytics">Аналитика</h4>
-      <ul>
-        <li><a href="https://deflow.ru/stocks/fundamental" data-i18n="foot.fa">Фундаментальный анализ</a></li>
-        <li><a href="https://deflow.ru/stocks/technical-analysis" data-i18n="foot.ta">Технический анализ</a></li>
-        <li><a href="https://deflow.ru/market/screeners" data-i18n="foot.screeners">Скринеры рынка</a></li>
-        <li><a href="https://deflow.ru/stocks/news" data-i18n="foot.news">Новости эмитентов</a></li>
-        <li><a href="https://deflow.ru/market/top100bonds" data-i18n="foot.top100">Топ 100 облигаций</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="foot.product">Продукт</h4>
-      <ul>
-        <li><a href="https://deflow.ru/terminal-preview">DeFlow Terminal</a></li>
-        <li><a href="https://deflow.ru/marketplace-preview" data-i18n="foot.market">Маркетплейс</a></li>
-        <li><a href="https://deflow.ru/ai-invest-chat" data-i18n="foot.ai">ИИ-чат по инвестициям</a></li>
-        <li><a href="https://deflow.ru/tariffs" data-i18n="nav.pricing">Тарифы</a></li>
-        <li><a href="https://deflow.ru/app/club" data-i18n="foot.tools">Инструменты</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="foot.connect">Связь</h4>
-      <ul>
-        <li><a href="https://t.me/deflowmedia">Telegram</a></li>
-        <li><a href="https://vk.com/deflowmedia" data-i18n="foot.vk">ВКонтакте</a></li>
-        <li><a href="https://youtube.com/deflowru">YouTube</a></li>
-        <li><a href="https://deflow.ru/support" data-i18n="foot.support">Поддержка</a></li>
-        <li><a href="https://deflow.ru/blog" data-i18n="nav.blog">Блог</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <div class="legal">
-        <a href="https://deflow.ru/privacy" data-i18n="foot.privacy">Политика конфиденциальности</a>
-        <a href="https://deflow.ru/terms" data-i18n="foot.terms">Условия использования</a>
-        <a href="https://deflow.ru/refund" data-i18n="foot.refund">Политика возврата средств</a>
-        <a href="https://deflow.ru/cookies" data-i18n="foot.cookies">Политика cookie</a>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="logo" href="https://deflow.ru/">DeFlow.</a>
+          <p data-i18n="foot.tag">Платформа аналитики российских акций и криптовалют.</p>
+          <a class="footer-mail" href="mailto:deflowru@mail.ru">deflowru@mail.ru</a>
+          <nav class="footer-social" aria-label="Social">
+            <a href="https://t.me/deflowmedia">Telegram</a>
+            <a href="https://vk.com/deflowmedia" data-i18n="foot.vk">ВКонтакте</a>
+            <a href="https://youtube.com/deflowru">YouTube</a>
+          </nav>
+        </div>
+        <nav class="footer-cols" aria-label="DeFlow">
+          <div>
+            <h4 data-i18n="foot.markets">Рынки</h4>
+            <ul>
+              <li><a href="https://deflow.ru/stocks" data-i18n="foot.stocks">Акции Мосбиржи</a></li>
+              <li><a href="https://deflow.ru/cryptocurrencies" data-i18n="foot.crypto">Криптовалюты</a></li>
+              <li><a href="https://deflow.ru/bonds" data-i18n="foot.bonds">Облигации</a></li>
+              <li><a href="https://deflow.ru/currency/usd" data-i18n="foot.usd">Курс доллара</a></li>
+              <li><a href="https://deflow.ru/market" data-i18n="foot.summary">Сводка рынка</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="foot.analytics">Аналитика</h4>
+            <ul>
+              <li><a href="https://deflow.ru/stocks/fundamental" data-i18n="foot.fa">Фундаментальный анализ</a></li>
+              <li><a href="https://deflow.ru/stocks/technical-analysis" data-i18n="foot.ta">Технический анализ</a></li>
+              <li><a href="https://deflow.ru/market/screeners" data-i18n="foot.screeners">Скринеры рынка</a></li>
+              <li><a href="https://deflow.ru/stocks/news" data-i18n="foot.news">Новости эмитентов</a></li>
+              <li><a href="https://deflow.ru/market/top100bonds" data-i18n="foot.top100">Топ 100 облигаций</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="foot.product">Продукт</h4>
+            <ul>
+              <li><a href="https://deflow.ru/terminal-preview">DeFlow Terminal</a></li>
+              <li><a href="https://deflow.ru/marketplace-preview" data-i18n="foot.market">Маркетплейс</a></li>
+              <li><a href="https://deflow.ru/ai-invest-chat" data-i18n="foot.ai">ИИ-чат по инвестициям</a></li>
+              <li><a href="https://deflow.ru/tariffs" data-i18n="nav.pricing">Тарифы</a></li>
+              <li><a href="https://deflow.ru/app/club" data-i18n="foot.tools">Инструменты</a></li>
+              <li><a href="https://deflow.ru/support" data-i18n="foot.support">Поддержка</a></li>
+              <li><a href="https://deflow.ru/blog" data-i18n="nav.blog">Блог</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <span>© 2026 DeFlow</span>
+      <div class="footer-wordmark" aria-hidden="true">DeFlow</div>
+      <div class="footer-bottom">
+        <span>© 2026 DeFlow</span>
+        <div class="legal">
+          <a href="https://deflow.ru/privacy" data-i18n="foot.privacy">Политика конфиденциальности</a>
+          <a href="https://deflow.ru/terms" data-i18n="foot.terms">Условия использования</a>
+          <a href="https://deflow.ru/refund" data-i18n="foot.refund">Политика возврата средств</a>
+          <a href="https://deflow.ru/cookies" data-i18n="foot.cookies">Политика cookie</a>
+        </div>
+      </div>
       <p class="disclaimer" data-i18n="foot.disc">Информация на сайте носит справочный характер и не является индивидуальной инвестиционной рекомендацией, офертой или гарантией доходности. DeFlow не является брокером, доверительным управляющим или инвестиционным советником, не принимает денежные средства и не совершает сделки за клиента. Результаты в прошлом не определяют результаты в будущем. Решения о сделках вы принимаете самостоятельно и на свой риск.</p>
     </div>
   </footer>
