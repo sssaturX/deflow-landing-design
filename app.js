@@ -513,6 +513,9 @@
     document.documentElement.classList.remove("is-arrive", "is-ready", "is-revealed", "is-leaving");
     document.documentElement.style.removeProperty("--veil-x");
     document.documentElement.style.removeProperty("--veil-y");
+    const veil = document.querySelector(".page-veil");
+    veil?.style.removeProperty("--veil-x");
+    veil?.style.removeProperty("--veil-y");
     try { sessionStorage.removeItem("df-veil"); } catch (e) {}
   };
   const playArrive = () => {

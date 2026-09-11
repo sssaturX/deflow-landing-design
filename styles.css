@@ -58,6 +58,7 @@ html.is-arrive.is-ready body { background: var(--bg); }
   place-items: center;
   overflow: hidden;
   pointer-events: none;
+  visibility: hidden;
 }
 .page-veil-blob {
   position: absolute;
@@ -68,10 +69,11 @@ html.is-arrive.is-ready body { background: var(--bg); }
   height: 280vmax;
   border-radius: 50%;
   background: #d6f250;
-  transform: translate(-50%, -50%) scale(0.001);
+  transform: translate(-50%, -50%) scale(0);
   transform-origin: center;
+  opacity: 0;
   will-change: transform;
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
 }
 .page-veil span {
   position: relative;
@@ -83,22 +85,27 @@ html.is-arrive.is-ready body { background: var(--bg); }
   transition: opacity 0.35s ease;
 }
 html.is-leaving .page-veil,
-html.is-arrive .page-veil { pointer-events: auto; }
+html.is-arrive .page-veil {
+  visibility: visible;
+  pointer-events: auto;
+}
 html.is-leaving .page-veil-blob,
 html.is-arrive .page-veil-blob {
   transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 html.is-leaving .page-veil span {
   opacity: 1;
   transition-delay: 0.2s;
 }
 html.is-arrive .page-veil span { opacity: 1; }
-html.is-arrive .page-veil-blob { transition: none; }
+html.is-arrive .page-veil-blob { transition: none; opacity: 1; }
 html.is-arrive.is-ready .page-veil-blob {
-  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease 0.45s;
 }
 html.is-arrive.is-revealed .page-veil-blob {
-  transform: translate(-50%, -50%) scale(0.001);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
 }
 html.is-arrive.is-revealed .page-veil span {
   opacity: 0;
