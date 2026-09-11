@@ -48,8 +48,7 @@ html.is-menu { overflow: hidden; }
 
 html.is-arrive,
 html.is-leaving { background: #d6f250; }
-html.is-arrive body { background: #d6f250; }
-html.is-arrive.is-ready body { background: var(--bg); }
+html.is-arrive body { background: var(--bg); }
 .page-veil {
   position: fixed;
   inset: 0;
@@ -65,15 +64,13 @@ html.is-arrive.is-ready body { background: var(--bg); }
   display: block;
   left: var(--veil-x, 50%);
   top: var(--veil-y, 50%);
-  width: 280vmax;
-  height: 280vmax;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: #d6f250;
   transform: translate(-50%, -50%) scale(0);
   transform-origin: center;
   opacity: 0;
-  will-change: transform;
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
 }
 .page-veil span {
   position: relative;
@@ -82,44 +79,36 @@ html.is-arrive.is-ready body { background: var(--bg); }
   font-size: clamp(28px, 5vw, 44px);
   color: var(--ink);
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.28s ease;
 }
 html.is-leaving .page-veil,
 html.is-arrive .page-veil {
   visibility: visible;
   pointer-events: auto;
 }
-html.is-leaving .page-veil-blob,
-html.is-arrive .page-veil-blob {
-  transform: translate(-50%, -50%) scale(1);
+html.is-leaving .page-veil-blob {
+  transform: translate(-50%, -50%) scale(90);
   opacity: 1;
+  transition: transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
 }
 html.is-leaving .page-veil span {
   opacity: 1;
-  transition-delay: 0.2s;
+  transition-delay: 0.16s;
 }
-html.is-arrive .page-veil span { opacity: 1; }
-html.is-arrive .page-veil-blob { transition: none; opacity: 1; }
-html.is-arrive.is-ready .page-veil-blob {
-  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease 0.45s;
-}
-html.is-arrive.is-revealed .page-veil-blob {
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-}
-html.is-arrive.is-revealed .page-veil span {
-  opacity: 0;
-  transition-delay: 0s;
-  transition-duration: 0.22s;
-}
-html.is-arrive:has(.page-login) {
-  --veil-x: 72%;
-  --veil-y: 48%;
-}
-html.is-arrive .login-card { opacity: 0; }
-html.is-arrive.is-revealed .login-card {
+html.is-arrive .page-veil span {
   opacity: 1;
-  transition: opacity 0.55s 0.08s ease;
+  animation: df-veil-mark 0.28s ease forwards;
+}
+@keyframes df-veil-mark {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+html.is-arrive .login-card {
+  animation: df-veil-card 0.45s 0.1s ease both;
+}
+@keyframes df-veil-card {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .site-header {
@@ -1543,10 +1532,6 @@ html:not(.is-consent) .login-actions {
   .login-copy h1 { font-size: clamp(28px, 8.6vw, 44px); }
   .login-word { font-size: clamp(88px, 28vw, 160px); bottom: -8%; }
   .login-card { padding: 22px 18px; border-radius: 24px; }
-  html.is-arrive:has(.page-login) {
-    --veil-x: 50%;
-    --veil-y: 38%;
-  }
   #terminal, #pricing, #faq, #blog, .banner, .section, .hero {
     scroll-margin-top: 68px;
   }

@@ -520,7 +520,6 @@
   };
   const playArrive = () => {
     if (!document.documentElement.classList.contains("is-arrive")) return;
-    try { sessionStorage.removeItem("df-veil"); } catch (e) {}
     const blob = document.querySelector(".page-veil-blob");
     let done = false;
     const finish = () => {
@@ -528,14 +527,10 @@
       done = true;
       clearVeil();
     };
-    requestAnimationFrame(() => {
-      document.documentElement.classList.add("is-arrive", "is-ready");
-      requestAnimationFrame(() => document.documentElement.classList.add("is-revealed"));
+    blob?.addEventListener("animationend", (event) => {
+      if (event.target === blob) finish();
     });
-    blob?.addEventListener("transitionend", (event) => {
-      if (event.target === blob && event.propertyName === "transform") finish();
-    });
-    setTimeout(finish, 1100);
+    setTimeout(finish, 900);
   };
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) clearVeil();
@@ -553,7 +548,7 @@
   const showHero = () => {
     document.querySelectorAll(".hero [data-assemble], .hero [data-reveal], .login-board [data-assemble]").forEach(show);
   };
-  if (arriving) setTimeout(showHero, 220);
+  if (arriving) setTimeout(showHero, 80);
   else requestAnimationFrame(() => requestAnimationFrame(showHero));
 
   document.addEventListener("click", (event) => {
@@ -580,7 +575,7 @@
       veil.style.setProperty("--veil-y", `${y}px`);
       void blob?.offsetWidth;
     }
-    try { sessionStorage.setItem("df-veil", "1"); } catch (e) {}
+    try { sessionStorage.setItem("df-veil", JSON.stringify({ x: Math.round(x), y: Math.round(y) })); } catch (e) {}
     document.documentElement.classList.add("is-leaving");
     let went = false;
     const go = () => {
@@ -591,7 +586,7 @@
     blob?.addEventListener("transitionend", (end) => {
       if (end.target === blob && end.propertyName === "transform") go();
     });
-    setTimeout(go, 720);
+    setTimeout(go, 520);
   }, true);
 
   const io = new IntersectionObserver(

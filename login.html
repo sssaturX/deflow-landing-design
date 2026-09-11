@@ -3,8 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <script>try { if (sessionStorage.getItem("df-veil") === "1") document.documentElement.classList.add("is-arrive"); } catch (e) {}</script>
-  <style>html.is-arrive,html.is-leaving{background:#d6f250}html.is-arrive body{background:#d6f250}</style>
+  <script>
+    try {
+      var v = sessionStorage.getItem("df-veil");
+      if (v) {
+        document.documentElement.classList.add("is-arrive");
+        var p = JSON.parse(v);
+        if (p && p.x != null) {
+          document.documentElement.style.setProperty("--veil-x", p.x + "px");
+          document.documentElement.style.setProperty("--veil-y", p.y + "px");
+        }
+      }
+    } catch (e) {}
+  </script>
+  <style>
+    html.is-arrive,html.is-leaving{background:#d6f250}
+    html.is-arrive body{background:#0b0b0b}
+    html.is-arrive .page-veil{visibility:visible;pointer-events:auto}
+    html.is-arrive .page-veil-blob{animation:df-veil-out .72s cubic-bezier(.4,0,.2,1) both}
+    @keyframes df-veil-out{from{transform:translate(-50%,-50%) scale(90);opacity:1}to{transform:translate(-50%,-50%) scale(0);opacity:0}}
+  </style>
   <title data-i18n="login.meta">Регистрация в DeFlow — бесплатно, VK ID и Яндекс ID</title>
   <meta name="description" content="DeFlow — платформа аналитики российских акций и криптовалют. Вход через VK ID и Яндекс ID." data-i18n-content="meta.desc" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
