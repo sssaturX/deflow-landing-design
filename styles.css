@@ -230,9 +230,9 @@ html.is-menu .burger span:last-child { transform: translateY(-3.25px) rotate(-45
 .cta h2 .line { padding: 0.1em 0 0.14em; }
 .end-dot {
   letter-spacing: 0;
-  margin-left: -0.02em;
+  margin-left: 0.1em;
 }
-[lang="ru"] .cta h2 .line:first-child .end-dot { margin-left: -0.3em; }
+[lang="ru"] .cta h2 .line:first-child .end-dot { margin-left: -0.28em; }
 .hero h1 {
   font-size: clamp(52px, 9.2vw, 128px);
   max-width: none;
